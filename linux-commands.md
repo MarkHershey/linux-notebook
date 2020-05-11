@@ -59,3 +59,8 @@ rm -rf some_folder
 ```
 
 More about removing directories: [How to Remove (Delete) Directory in Linux](https://linuxize.com/post/remove-directory-linux/)
+
+check ubuntu version
+```
+lsb_release -a
+```
