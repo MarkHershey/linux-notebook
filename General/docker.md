@@ -1,6 +1,5 @@
 # Docker Commands, Help & Tips
 
-> forked from [Brad Traversy](https://gist.github.com/bradtraversy/89fad226dc058a41b596d586022a9bd3)
 
 ### Show commands & management commands
 
@@ -543,3 +542,5 @@ docker-compose up -d
 ```
 docker-compose down
 ```
+
+> forked from [Brad Traversy](https://gist.github.com/bradtraversy/89fad226dc058a41b596d586022a9bd3)
