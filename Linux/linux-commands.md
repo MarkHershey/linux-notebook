@@ -1,19 +1,58 @@
-# Frequently-used Linux Commands
+# Frequently Used Linux Commands
 
-Print
+### System
 
+- `sudo apt update` check for updates
+- `sudo apt upgrade` actually download and install updates
+- `lsb_release -a` check ubuntu version
+- `echo` print function
+
+
+### Navigate Around File System
+
+- `ls` list files
+- `ls -l` list files with details
+- `ls -la` list all files with details including hidden files
+- `cd` change directory
+- `cd ..` move out / up current directory by one layer
+- `cd ~` change to home Directory
+- `pwd` print working directory
+
+### Working with Files and Folders
+
+
+
+- `mkdir new_folder_name` make directory (create a new folder)
+- `rmdir some_folder` remove a empty folder
+- `rm -rf some_folder` remove a folder and everything inside
+
+>More about removing directories: [How to Remove (Delete) Directory in Linux](https://linuxize.com/post/remove-directory-linux/)
+
+- `touch example.txt` create a new file
+- `nano example.txt` edit a file using the nano text editor
+- `vim example.txt` edit a file using the vim text editor
+- `cat example.txt` print out file content
+- `rm example.txt` remove a file (delete a file)
+
+move a file
 ```
-echo
+mv [current path to file] [new path to file]
+mv example.txt ~/Desktop/example.txt
 ```
 
-
-Print content of file
-
+rename a file
 ```
-cat example.json
+mv [current file name] [new file name]
+mv example.txt example_renamed.txt
 ```
 
-Secure copy
+copy a file
+```
+cp [current path to file] [new path to file]
+cp example.txt example_copy.txt
+```
+
+secure copy
 
 ```
 scp [local file] [remote user]@[remote address]:[remote path]
@@ -21,17 +60,6 @@ scp [local file] [remote user]@[remote address]:[remote path]
 scp example.json root@178.128.22.33:/home/root/example
 ```
 
-create folder
-
-```
-mkdir new_folder
-```
-
-list all file with details (inc. hidden files)
-
-```
-ls -la
-```
 
 change owner for all files inside a folder
 
@@ -39,28 +67,16 @@ change owner for all files inside a folder
 sudo chown -R username:username [folder]
 ```
 
-update all packages
+change user permission of a file
 
 ```
-sudo apt update
-sudo apt upgrade
+chmod [updated permissions] [filename]
+chmod u+e example.sh
 ```
 
-remove empty folder
 
-```
-rmdir some_folder
-```
 
-remove folder and all of the files inside
+### Switch User
 
-```
-rm -rf some_folder
-```
-
-More about removing directories: [How to Remove (Delete) Directory in Linux](https://linuxize.com/post/remove-directory-linux/)
-
-check ubuntu version
-```
-lsb_release -a
-```
+- `su -` switch to root user
+- `su [username]` switch back to yourself
