@@ -6,6 +6,21 @@
 - `sudo apt upgrade` actually download and install updates
 - `lsb_release -a` check ubuntu version
 - `echo` print function
+- `sudo reboot` reboot
+- `sudo shutdown -h now` shutdown now
+
+
+
+- `ifconfig`
+- `iwconfig`
+- `ping <domain name | ip address>`
+- `top` show processes; use `q` to quit
+-  `uname -a` check machine info
+- `blkid` check hard drive
+- `df` disk info
+- `lsusb` list usb
+- `lspci` list pci
+
 
 
 ### Navigate Around File System
@@ -19,8 +34,6 @@
 - `pwd` print working directory
 
 ### Working with Files and Folders
-
-
 
 - `mkdir new_folder_name` make directory (create a new folder)
 - `rmdir some_folder` remove a empty folder
