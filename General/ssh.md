@@ -25,7 +25,19 @@ Reference: [www.ssh.com/ssh/public-key-authentication](https://www.ssh.com/ssh/p
 
 ### Step 1: Generate an SSH Key
 
-Run `ssh-keygen` in terminal and follow its instructions.
+Run `ssh-keygen -t rsa` in terminal and follow its instructions,
+
+or `ssh-keygen -t rsa -b 4096` for extra enhanced security.
+
+>- `-t` “Type” This option specifies the type of key to be created. Commonly used values are:
+>   - `rsa` for RSA keys
+>   - `dsa` for DSA keys
+>   - `ecdsa` for elliptic curve DSA keys
+>
+>
+>- `-b` “Bits” This option specifies the number of bits in the key. The regulations that govern the use case for SSH may require a specific key length to be used. In general, 2048 bits is considered to be sufficient for RSA keys.
+>
+> Reference: [www.ssh.com/ssh/keygen/](https://www.ssh.com/ssh/keygen/)
 
 Key pair generated will be stored at the following path by default:
 
@@ -53,6 +65,11 @@ chmod 700 ~/.ssh/
 chmod 600 ~/.ssh/*
 ```
 
+or
+
+```
+cat ~/.ssh/id_rsa.pub | ssh user@host "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+```
 
 ##### Method 2: Using `ssh-copy-id`
 
@@ -108,6 +125,10 @@ Restart the SSH service
 ```
 sudo service ssh restart
 ```
+or
+```
+sudo systemctl reload sshd.service
+```
 
 ### Step 4: Test your connection
 
@@ -119,3 +140,43 @@ or specify your key explicitly:
 ssh -i ~/.ssh/mykey user@host
 ```
 - OpenSSH only allows a maximum of five keys to be tried automatically. If you have more keys, you must specify which key to use using the `-i` option to `ssh`.
+
+### Additional Note for Server Setup
+
+#### create new user
+
+- `adduser <username>` add linux user
+- `id <username>` check user permissions
+- `usermod -aG sudo <username>` grant root permission to user
+- `id <username>` check user permissions
+
+#### set up SSH key under new user
+
+- `cd /home/<username>`
+- refer from Step 2
+
+#### disable password authentication and root login
+
+- `PasswordAuthentication no`
+- `PermitRootLogin no`
+- `sudo systemctl reload sshd`
+
+#### change owner of new user's home folder from root to new user
+
+- `sudo chown -R <username>:<username> /home/<username>`
+- `chmod 700 /home/<username>/.ssh`
+
+### Additional Note for GitHub Setup
+
+- Step 1: Key Generation
+- Step 2: Copy and paste the public key to your [Github > Settings > SSH and GPG keys](https://github.com/settings/keys)
+- Step 3: `ssh-add ~/.ssh/<your-key-name>`
+
+>- `ssh-add` adds private key identities (from your `~/.ssh` directory) to the authentication agent (`ssh-agent`), so that the ssh agent can take care of the authentication for you.
+>
+>- In Unix, `ssh-agent` is a background program that handles passwords for SSH private keys. The `ssh-add` command prompts the user for a private key password and adds it to the list maintained by `ssh-agent`. Once you add a password to `ssh-agent`, you will not be prompted for it when using `SSH` or `scp` to connect to hosts with your public key.
+>
+>Reference:
+>   - [What exactly does ssh-add do?](https://superuser.com/questions/360686/what-exactly-does-ssh-add-do)
+>   -[About ssh-agent and ssh-add in Unix](https://kb.iu.edu/d/aeww)
+>   -[Understanding ssh-agent and ssh-add](http://blog.joncairns.com/2013/12/understanding-ssh-agent-and-ssh-add/)
