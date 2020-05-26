@@ -140,14 +140,17 @@ docker ps -a
 ```
 
 list all exited containers
-    - `-a` for all
-    - `-f` for filter
+
+- `-a` for all
+- `-f` for filter
+
 ```
 docekr ps -a -f status=exited
 ```
 
 remove all exited containers
-    `-q` returns the ids of the containers
+- `-q` returns the ids of the containers
+
 ```
 docker rm $(docker ps -a -f status=exited -q)
 ```
