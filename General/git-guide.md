@@ -149,6 +149,31 @@ git pull
 
 
 ### Git Branch
+```
+git branch <new branch name>
+```
+
+### Git Blame
+```
+git blame [file]
+```
+
+*Common Options:*
+
+- `git blame -L 1,5 README.md` for showing line 1 to 5 only.
+- `git blame -L 1,+5 README.md` for showing 5 lines only starting from line 1.
+- `git blame -e README.md` for showing user.email instead of user.name
+- `git blame `
+
+### Git Log
+```
+git log
+```
+
+*Common Options:*
+
+- `git log --oneline` for showing one line per commit
+- `git log --oneline --graph` for showing git graph
 
 
 ## Collaboration
