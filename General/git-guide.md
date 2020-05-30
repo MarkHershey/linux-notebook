@@ -41,6 +41,7 @@ git config --global user.email
 
 - To set username and email address for Git.
 - `--global` means to set for all the repositories on your machine.
+- If you only want to set for a single repository, do it without the `--global` flag.
 
 ```
 git config --global user.name "Tom Cruise"
