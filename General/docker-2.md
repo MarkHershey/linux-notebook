@@ -107,7 +107,7 @@ docker images -f dangling=true
 
 remove all dangling images
 ```
-docker images purge
+docker image prune
 ```
 
 remove multiple img
