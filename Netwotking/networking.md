@@ -54,3 +54,16 @@
 #### Session: Sockets, NetBIOS
 #### Presentation: SSL, ASCII
 #### Application: FTP, SMTP, POP3, DNS, HTTP
+
+TODO:
+
+- HTTP
+- HTTPS
+- UDP
+- FTP
+- TCP/IP
+- SSH
+- POP3
+- SMTP
+- SNMP
+- ICMP

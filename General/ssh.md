@@ -180,3 +180,9 @@ ssh -i ~/.ssh/mykey user@host
 >   - [What exactly does ssh-add do?](https://superuser.com/questions/360686/what-exactly-does-ssh-add-do)
 >   -[About ssh-agent and ssh-add in Unix](https://kb.iu.edu/d/aeww)
 >   -[Understanding ssh-agent and ssh-add](http://blog.joncairns.com/2013/12/understanding-ssh-agent-and-ssh-add/)
+
+
+### Start SSH Agent
+```
+eval "$(ssh-agent -s)"
+```
