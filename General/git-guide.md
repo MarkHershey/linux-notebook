@@ -53,13 +53,21 @@ git config --global user.email "tom@example.com"
 ## Work with local Git repositories
 
 #### `git init`
+
+- initiate a git repository at current working directory
+- a hidden folder `.git/` will be created, thats where all git-related stuff will be stored.
+
 #### `git add`
-#### `git help <git command>`
-#### `git status`
-#### `git log --all --graph --decorate`
+
+- Any changes you made inside a `git` repository have to be **staged** first before **committing**.
+- It is a way to let `git` know what are the files/changes you want `git` to keep track of.
+- `git add <filename>` stages your changes on `<filename>`.
+- `git add -all` stages all your untracked changes within the repository.
+
+
 #### `git commit`
 #### `git commit -a`
-Tell the command to automatically stage files that have been modified and deleted, but new files you have not told Git about are not affected.
+- Tell the command to automatically stage files that have been modified and deleted, but new files you have not told Git about are not affected.
 
 #### `git commit -m "Your commit message"`
 
@@ -67,11 +75,21 @@ Tell the command to automatically stage files that have been modified and delete
 #### `git branch -vv`
 
 
-
+#### `git log --all --graph --decorate`
 
 #### `git checkout <hash string>`
 #### `git checkout master`
 
+#### `git status`
+
+- `git status` allows your to check:
+    - which branch are you in?
+    - Is this branch up to date with master branch?
+    - what are the staged files that are not yet committed?
+    - what are the not yet staged files?
+
+
+#### `git help <git command>`
 
 ## Work with remote Git repositories
 
