@@ -4,7 +4,7 @@
 
 ## General
 
-- [Guide - Git](General/git-guide.md)
+- [Guide - Git](General/git_guide.md)
 - [Guide - SSH](General/ssh.md)
 - [Ref - Docker](General/docker.md)
 
