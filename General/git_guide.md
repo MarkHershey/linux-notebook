@@ -85,14 +85,18 @@ git config --global user.email "tom@example.com"
 
 #### `git checkout`
 
-- `git checkout <BRANCH NAME>`
+- `git checkout` operates upon three distinct entities: `files`, `commits`, and `branches`.
+- `git checkout <BRANCH NAME>` switches to another existing branch.
+- `git checkout -b <NEW BRANCH NAME>` creates a new branch and switches to it simultaneously.
 - `git checkout <COMMIT HASH STRING>`
-- `git checkout <hash string>`
-
-#### `git log --all --graph --decorate`
 
 
-#### `git checkout master`
+#### `git log`
+
+- `git log` shows your commit history.
+- `git log --oneline` shows your commit history, one commit per line.
+- `git log --graph` shows your commit history with a simple graph illustration.
+
 
 #### `git status`
 
@@ -104,6 +108,13 @@ git config --global user.email "tom@example.com"
 
 
 #### `git help <git command>`
+
+- get help on a particular git command.
+- for example, you can do `git help branch`
+
+
+
+---
 
 ## Work with remote Git repositories
 
@@ -144,72 +155,27 @@ Example:
 git clone https://github.com/MarkHershey/python-learning.git
 ```
 
-### Git Stage Changes
+#### `git push`
 
-```
-git add [filename]
-```
+- `git push <remote> <branch>`
 
+#### `git fetch`
 
-### Git Commit Changes
+- `git fetch --all`
 
-```
-git commit [filename] -m 'commit message'
-```
+#### `git pull`
 
-```
-git commit -a -m 'commit message'
-```
+#### `git merge`
 
-### Git Push
-```
-git push
-```
+### `git blame`
 
-```
-git push <remote> <branch>
-```
-
-### Git Fetch
-
-### Git Merge
+- `git blame <filename>`
+- `git blame -L 1,5 <filename>` for showing line 1 to 5 only.
+- `git blame -L 1,+5 <filename>` for showing 5 lines only starting from line 1.
+- `git blame -e <filename>` for showing user.email instead of user.name
 
 
-### Git Pull
-```
-git pull
-```
-
-
-### Git Branch
-```
-git branch <new branch name>
-```
-
-### Git Blame
-```
-git blame [file]
-```
-
-*Common Options:*
-
-- `git blame -L 1,5 README.md` for showing line 1 to 5 only.
-- `git blame -L 1,+5 README.md` for showing 5 lines only starting from line 1.
-- `git blame -e README.md` for showing user.email instead of user.name
-- `git blame `
-
-### Git Log
-```
-git log
-```
-
-*Common Options:*
-
-- `git log --oneline` for showing one line per commit
-- `git log --oneline --graph` for showing git graph
-
-
-## Collaboration
+## Collaboration on GitHub
 
 #### Contribute to a project where you have collaborator access
 
@@ -222,10 +188,15 @@ To contribute to a project where you don't have write access, you can use GitHub
 
 ---
 
+#### How to undo changes?
 
+#### How to un-stage a file?
 
+#### How to change a commit message?
 
-#### How to unstage a changed file
+#### How to roll back to a particular commit?
+
+#### How to delete a branch?
 
 #### How to make Git stop tracking a file
 
