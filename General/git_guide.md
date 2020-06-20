@@ -3,20 +3,23 @@
 
 ## What is the difference between Git and GitHub?
 
-#### Short version:
-- **Git** is a version management software that manages your local git repositories.
-- **GitHub** is an online hosting service for your git repositories.
+#### TLDR:
+- **`Git`** is a version control software that manages your local git repositories.
+
+- **`GitHub`** is an online hosting service for your git repositories.
 
 #### Long version:
-- **Git** is open-source software that helps you manage code versions, it does not have a graphical interface, so you can't really "see" the software, but you can use git commands in your terminal/ shell to interact with it.
-- **GitHub** is an online platform developed by a company and then acquired by Microsoft in 2018. Github, the platform, provides free hosting service for git repositories, which usually contains code or text files. It also enables collaboration on projects, since the repository is hosted on the cloud, teams can collaborate on the project repository from different locations. GitHub is an online service that is built around git, making git more convenient and powerful for programmers especially teams.
+- **`Git`** is open-source software that helps you manage code versions, keep track of file changes. You can interact with `git` using CLI (Command Line Interface), meaning you type in git commands in your shell/ terminals. Alternatively, you can choose to use a third-party GUI (Graphical User Interface) from [here](https://git-scm.com/downloads/guis/).
+
+- **`GitHub`** is an online platform developed by a company and then acquired by Microsoft in 2018. Github, the platform, provides free hosting service for git repositories, which usually contains code or text files. It also enables collaboration on projects, since the repository is hosted on the cloud, teams can collaborate on the project repository from different locations. GitHub is an online service that is built around git, making git more convenient and powerful for programmers especially teams.
 
 
-## Download Git
+## Install Git
 
 #### For macOS:
 
 Just run the following command in your terminal to check your git version, it will prompt you to install Git if you don't have it.
+
 ```
 git --version
 ```
@@ -28,7 +31,7 @@ Refer to: [Getting Started Installing Git](https://git-scm.com/book/en/v2/Gettin
 ## Configure Git
 
 #### Setting up Git username and email address
-Just letting Git know who you are. If you already have a GitHub account, keep the username and the email address for your Git the same as your GitHub account.
+Just letting `Git` know who you are. If you already have a `GitHub` account, keep the email address for your `Git` at local same as your `GitHub` email address.
 
 - To check current username and email address for Git.
 - It returns nothing if no name/email has been set.
@@ -66,18 +69,29 @@ git config --global user.email "tom@example.com"
 
 
 #### `git commit`
-#### `git commit -a`
-- Tell the command to automatically stage files that have been modified and deleted, but new files you have not told Git about are not affected.
 
-#### `git commit -m "Your commit message"`
+- `git commit -m "YOUR COMMIT MSG"` commits (saves) your staged changes with a short commit message.
+
+#### `git commit -a`
+
+- `git commit -a` is a combination of `git add --all` and `git commit`.
+- This command automatically stages and commits files that have been modified and deleted, but not new files you have just created.
 
 #### `git branch`
-#### `git branch -vv`
 
+- `git branch` shows what branches you have.
+- `git branch -vv` shows your branches with more details.
+- `git branch <NEW BRANCH NAME>` creates a new branch from current head.
+
+#### `git checkout`
+
+- `git checkout <BRANCH NAME>`
+- `git checkout <COMMIT HASH STRING>`
+- `git checkout <hash string>`
 
 #### `git log --all --graph --decorate`
 
-#### `git checkout <hash string>`
+
 #### `git checkout master`
 
 #### `git status`
@@ -216,3 +230,10 @@ To contribute to a project where you don't have write access, you can use GitHub
 #### How to make Git stop tracking a file
 
 #### How to let git ignore certain files
+
+
+---
+
+## Further Readings
+
+If you want to learn `Git` more systematically, [Pro Git](https://git-scm.com/book/en/v2) is a great book.
