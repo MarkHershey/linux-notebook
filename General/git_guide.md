@@ -11,7 +11,7 @@
 #### Long version:
 - **`Git`** is open-source software that helps you manage code versions, keep track of file changes. You can interact with `git` using CLI (Command Line Interface), meaning you type in git commands in your shell/ terminals. Alternatively, you can choose to use a third-party GUI (Graphical User Interface) from [here](https://git-scm.com/downloads/guis/).
 
-- **`GitHub`** is an online platform developed by a company and then acquired by Microsoft in 2018. Github, the platform, provides free hosting service for git repositories, which usually contains code or text files. It also enables collaboration on projects, since the repository is hosted on the cloud, teams can collaborate on the project repository from different locations. GitHub is an online service that is built around git, making git more convenient and powerful for programmers especially teams.
+- **`GitHub`** is an online platform developed by a company and then acquired by Microsoft in 2018. GitHub, the platform, provides free hosting service for git repositories, which usually contains code or text files. It also enables collaboration on projects, since the repository is hosted on the cloud, teams can collaborate on the project repository from different locations. GitHub is an online service that is built around git, making git more convenient and powerful for programmers especially teams.
 
 
 ## Install Git
@@ -128,67 +128,93 @@ git config --global user.email "tom@example.com"
 5. Create a new file / make changes to your files
 6. Stage your changes
 7. Commit Changes
-8. Push commits to Github
+8. Push commits to GitHub
 
-### Git Clone a Repository
-"Clone" means copy or download a remote repository to your local machine.
+#### `git clone`
+"Clone" means to copy or download a remote repository to your local machine.
 
 - Clone a repository does not affect the original repository in any way, since you just make a copy only.
 - You can clone your own repository and others' repository, basically any public repository.
-- If you are cloning your own private repository, you will be required to log into your Github account after you key in the clone command.  
+- If you are cloning your own private repository, you will be required to log into your GitHub account after you key in the clone command.  
+- When you clone a repository with `git clone`, it automatically creates a `remote` connection called `origin` pointing back to the cloned repository. This is useful for developers creating a local copy of a central repository, since it provides an easy way to pull upstream changes or publish local commits. This behaviour is also why most Git-based projects call their central repository origin.
 
-If you don't know how to use Git command, follow this Step-by-step guide:
+*Example:*
 
-0. Copy the repository git url from the GitHub repository page.
-1. Create a new folder on your machine at your desired directory.
-2. Open your Terminal / Shell on your machine.
-3. Use command line to navigate into the folder you just created.
-4. key in the following git command, which is `git clone` and paste in the repository url you just copied in the first step.
-5. press `Enter` key, the repository will be downloaded within a few seconds.
+1. Go to your interested GitHub repository page, copy the `clone` URL
 
-Git command:
-`git clone + [Github Repository git URL]`
+    <img src="../pics/git_clone.png" alt="" width=300 height=auto>
 
-Example:
 
-```
-git clone https://github.com/MarkHershey/python-learning.git
-```
+2. Use terminal and navigate to the root directory you wish to clone the repo into.
+
+3. Example: `git clone https://GitHub.com/MarkHershey/notebook.git`
+
+<img src="../pics/git_clone_2.png" alt="" width=600 height=auto>
 
 #### `git push`
 
-- `git push <remote> <branch>`
+- `git push <REMOTE NAME> <BRANCH NAME>` pushes commits to specified remote branch.
+
+#### `git remote`
+
+- `git remote -v` checks any remote links to current repository。
+- `git remote add <NAME> <URL>` add remote connection.
+- `git remote rm <NAME>` removes a remote connection.
+- `git remote rename <OLD NAME> <NEW NAME>` renames a remote connection.
 
 #### `git fetch`
 
+- `git fetch` downloads any updates from remote。
+- `git fetch <remote>`
 - `git fetch --all`
 
 #### `git pull`
 
 #### `git merge`
 
-### `git blame`
+#### `git blame`
 
-- `git blame <filename>`
+- `git blame <filename>` allows you to check who contributed which line inside a file.
 - `git blame -L 1,5 <filename>` for showing line 1 to 5 only.
 - `git blame -L 1,+5 <filename>` for showing 5 lines only starting from line 1.
 - `git blame -e <filename>` for showing user.email instead of user.name
 
 
-## Collaboration on GitHub
+## Contribute to Someone's Repository
 
 #### Contribute to a project where you have collaborator access
 
-If you have collaborator permissions on a repository, you can create a branch off of the repository's default branch so you can safely experiment with changes.
+1. Create a new `branch`.
+2. Make changes on your `branch`.
+3. Open a Pull Request to merge your `branch` to `master` `branch`.
 
 #### Contribute to a project where you don't have write access
 
-To contribute to a project where you don't have write access, you can use GitHub Desktop to create a fork of the repository. Changes on your fork don't affect the original repository. You can commit changes on your fork, then open a pull request to the original repository with your proposed changes.
+1. `Fork` the original repository on GitHub.
+2. Make changes on your forked repository.
+3. Open a `Pull Request` to merge your repo into the original repo.
 
+
+
+## Undoing Commits & Changes
+
+[Reference](https://www.atlassian.com/git/tutorials/undoing-changes)
+
+#### `git checkout`
+
+1. Use `git checkout <COMMIT HASH>` to view the commit you want to revert back to. Now, you have entered a `detached HEAD` state.
+2. Create a new branch from here by using `checkout -b <NEW BRANCH NAME>`
+
+#### `git clean`
+
+#### `git revert`
+
+#### `git reset`
+
+#### `git rm`
 
 ---
 
-#### How to undo changes?
 
 #### How to un-stage a file?
 
@@ -207,4 +233,5 @@ To contribute to a project where you don't have write access, you can use GitHub
 
 ## Further Readings
 
-If you want to learn `Git` more systematically, [Pro Git](https://git-scm.com/book/en/v2) is a great book.
+- Great `Git` tutorials by [Atlassian Bitbucket](https://www.atlassian.com/git/tutorials/syncing)
+- If you want to learn `Git` more systematically, [Pro Git](https://git-scm.com/book/en/v2) is a great book.
