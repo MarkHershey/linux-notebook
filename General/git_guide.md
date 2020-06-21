@@ -209,6 +209,9 @@ git config --global user.email "tom@example.com"
 
 #### `git revert`
 
+- `git revert <COMMIT HASH>` creates a new commit at `HEAD` that revert the changes made in the commit specified only. It does not change history, it does not revert commit in between current `HEAD` and the commit specified.
+
+
 #### `git reset`
 
 #### `git rm`
