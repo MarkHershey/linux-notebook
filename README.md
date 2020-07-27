@@ -10,9 +10,20 @@
     - More flexible for technical documentation.
     - [A ReStructuredText Primer](https://github.com/lsegal/atom-rst-preview/blob/master/sample.rst)
 
+## Git & GitHub
+
+Entry Point for beginners:
+- https://rogerdudler.github.io/git-guide/
+
+These two guides are very detailed and well-written, covering from basic to advanced usage: 
+- [Git Guides](https://github.com/git-guides) by GitHub
+- [Git Tutorials](https://www.atlassian.com/git/tutorials/setting-up-a-repository) by Bitbucket
+
+My Git Guide:
+- [Guide - Git](General/git_guide.md) by @MarkHershey
+
 ## General
 
-- [Guide - Git](General/git_guide.md)
 - [Guide - SSH](General/ssh.md)
 - [Ref - Docker](General/docker.md)
 - [TODO - Docker 2](General/docker-2.md)
