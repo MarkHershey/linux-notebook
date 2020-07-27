@@ -13,7 +13,7 @@
 ## Git & GitHub
 
 Entry Point for beginners:
-- https://rogerdudler.github.io/git-guide/
+- [Git - the simple guide](https://rogerdudler.github.io/git-guide/)
 
 These two guides are very detailed and well-written, covering from basic to advanced usage: 
 - [Git Guides](https://github.com/git-guides) by GitHub
