@@ -2,13 +2,19 @@
 
 >If you are looking for Python-related stuff, I have moved all of them to [python-learning](https://markhershey.github.io/python-learning/).
 
+## Docs Syntax
+
+- [Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/) `.md`
+    - More widely used syntax for documentation and web.
+- [reStructuredText](https://docutils.sourceforge.io/rst.html) `.rst`
+    - More flexible for technical documentation.
+    - [A ReStructuredText Primer](https://github.com/lsegal/atom-rst-preview/blob/master/sample.rst)
+
 ## General
 
 - [Guide - Git](General/git_guide.md)
 - [Guide - SSH](General/ssh.md)
 - [Ref - Docker](General/docker.md)
-
-
 - [TODO - Docker 2](General/docker-2.md)
 - [TODO - VIM](General/vim-ref.md)
 - [TODO - SSH Tunnel](General/ssh.md)
