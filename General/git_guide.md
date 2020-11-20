@@ -214,10 +214,17 @@ git config --global user.email "tom@example.com"
 
 #### `git reset`
 
+- `git reset --hard master`
+
 #### `git rm`
 
 ---
 
+#### How to clone a remote branch other than the default branch?
+
+```
+git checkout --track origin/other-branch
+```
 
 #### How to un-stage a file?
 
